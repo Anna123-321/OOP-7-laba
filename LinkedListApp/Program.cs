@@ -2,8 +2,15 @@ using LinkedListLib;
 
 namespace LinkedListApp;
 
+/// <summary>
+/// Демонстраційна програма: використовує однозв'язний список з бібліотеки
+/// <see cref="LinkedListLib"/> та показує роботу всіх його операцій.
+/// </summary>
 public static class Program
 {
+    /// <summary>
+    /// Точка входу застосунку.
+    /// </summary>
     public static void Main()
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
@@ -17,6 +24,12 @@ public static class Program
         Console.WriteLine("\n=== Кінець демонстрації ===");
     }
 
+    /// <summary>
+    /// Демонструє повний набір операцій на першому списку:
+    /// наповнення, індексацію, foreach, вставку після першого,
+    /// пошук, підрахунок кратних на парних позиціях, видалення за індексом,
+    /// отримання списку до мінімуму та видалення після мінімуму.
+    /// </summary>
     private static void DemonstrateFirstList()
     {
         Console.WriteLine("--- Список №1 ---");
@@ -74,6 +87,10 @@ public static class Program
         Console.WriteLine($"Кількість елементів: {list.Count}");
     }
 
+    /// <summary>
+    /// Демонструє другий незалежний список з іншими значеннями.
+    /// Показує, що клас коректно працює з кількома об'єктами одночасно.
+    /// </summary>
     private static void DemonstrateSecondList()
     {
         Console.WriteLine("--- Список №2 ---");
@@ -102,6 +119,12 @@ public static class Program
         Print("Після видалення хвоста", list);
     }
 
+    /// <summary>
+    /// Допоміжний метод для виведення списку на консоль у форматі [ a -&gt; b -&gt; c ].
+    /// Це — використання списку (проходимо <c>foreach</c>), а не його функціонал.
+    /// </summary>
+    /// <param name="title">Підпис перед списком.</param>
+    /// <param name="list">Список, який треба вивести.</param>
     private static void Print(string title, SinglyLinkedList list)
     {
         if (list.IsEmpty)
